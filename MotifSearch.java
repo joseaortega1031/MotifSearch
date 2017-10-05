@@ -38,7 +38,10 @@ public class MotifSearch {
         ArrayList<String> answers= new ArrayList<String>();
         ArrayList<String> answers1= new ArrayList<String>();
         ArrayList<String> answers2= new ArrayList<String>();
-        ArrayList<String> answers3= new ArrayList<String>();      
+        ArrayList<String> answers3= new ArrayList<String>(); 
+        
+        //These next few steps breaks the string input and breaks the input into a string of four letters and breaks it into 7 possibilities
+        
         //"AAAAAAAAAA"
         String input1= "ACTGACGCAG";
         ArrayList<String> in1 = new ArrayList<String>();        
@@ -64,6 +67,7 @@ public class MotifSearch {
             start=start+1;
             in3.add(red);
         }
+        //This takes the input from input 1 and checks if the 7 different inputs match the 256 combinations
         int counter=0;
         for(int i=0;i<hi.size();i++){
             for(int j=0;j<in1.size();j++){
@@ -87,6 +91,8 @@ public class MotifSearch {
                 counter=0;
                 }
         }
+        
+        //This takes the input from input 2 and checks if the 7 different inputs match the 256 combinations
         for(int i=0;i<hi.size();i++){
             for(int j=0;j<in2.size();j++){
                 if(hi.get(i).charAt(0) == in2.get(j).charAt(0)){
@@ -109,6 +115,8 @@ public class MotifSearch {
                 counter=0;
                 }
         }
+        
+        //This takes the input from input 3 and checks if the 7 different inputs match the 256 combinations
         for(int i=0;i<hi.size();i++){
             for(int j=0;j<in1.size();j++){
                 if(hi.get(i).charAt(0) == in3.get(j).charAt(0)){
@@ -131,6 +139,7 @@ public class MotifSearch {
                 counter=0;
                 }
         }
+        //This prints out the matched combinations
         for(String index: answers1){
             if(answers2.contains(index)){
                 if(answers3.contains(index)){
